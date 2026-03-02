@@ -1,0 +1,46 @@
+[workspace]
+members = ["crates/*"]
+
+[package]
+name = "tidaluna-launcher"
+description = "A launcher for TidaLuna, a client mod for TIDAL"
+authors = ["Johnnycyan"]
+version = "0.1.0"
+license = "GPL-3.0"
+homepage = "https://github.com/Johnnycyan/Tidaluna-Launcher"
+repository = "https://github.com/Johnnycyan/Tidaluna-Launcher"
+keywords = ["tidaluna", "tidal", "modding", "electron", "injector"]
+edition = "2024"
+
+[dependencies]
+dirs = "6.0.0"
+tinyjson = "2.5.1"
+tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread"] }
+ureq = "3.0.3"
+zip = { version = "8.1.0", default-features = false, features = ["deflate"] }
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.9", default-features = false, features = [
+	"combaseapi",
+	"knownfolders",
+	"shlobj",
+	"winerror",
+	"winuser",
+	"wingdi",
+	"libloaderapi",
+	"windef",
+] }
+
+[target.'cfg(unix)'.dependencies]
+dialog = "0.3.0"
+
+[lib]
+name = "tidaluna_launcher"
+path = "src/lib.rs"
+
+[[bin]]
+name = "tidaluna"
+path = "src/bin/tidaluna.rs"
+
+[build-dependencies]
+winresource = { version = "0.1.19", default-features = false }
