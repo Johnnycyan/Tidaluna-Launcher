@@ -1,3 +1,8 @@
+Section "Create Start Menu Shortcuts" StartMenuShortcuts
+	; This section is selected by default and acts as a flag.
+	; The actual shortcut creation is done in the install section below.
+SectionEnd
+
 Section "TIDAL (TidaLuna)" InstallTidaLuna
 
 	SetOutPath "$INSTDIR"
@@ -22,11 +27,6 @@ Section "TIDAL (TidaLuna)" InstallTidaLuna
 			CreateShortCut "$SMPROGRAMS\TidaLuna\TidaLuna.lnk" "$INSTDIR\TidaLuna.exe" "" "$INSTDIR\TidaLuna.exe"
 	${EndIf}
 
-SectionEnd
-
-Section "Create Start Menu Shortcuts" StartMenuShortcuts
-	; This section is selected by default and acts as a flag.
-	; The actual shortcut creation is done in the install section above.
 SectionEnd
 
 Function .onInstSuccess
