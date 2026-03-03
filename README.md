@@ -1,5 +1,8 @@
 # TidaLuna Launcher
 
+> [!NOTE]
+> You probably should just use the [official CLI installer](https://github.com/jxnxsdev/TidaLuna-Installer) for this as it can achieve the same thing. I wasn't aware of that when I made this so this is more just a learning project for me now.
+
 A launcher for [TidaLuna](https://github.com/Inrixia/TidaLuna), a client mod for the TIDAL music app.
 
 The launcher automatically downloads and installs TidaLuna into your TIDAL installation, then launches TIDAL with the mod active.
